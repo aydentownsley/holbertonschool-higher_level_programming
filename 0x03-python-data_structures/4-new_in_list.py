@@ -12,7 +12,7 @@
 def new_in_list(my_list, idx, element):
     if not my_list:
         return None
-    if idx > len(my_list) or idx < 0:
+    if idx > len(my_list) - 1 or idx < 0:
         return my_list
     a = my_list[:]
     a[idx] = element
