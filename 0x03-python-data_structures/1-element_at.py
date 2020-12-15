@@ -8,6 +8,7 @@
 # Result: return element at location if exists
 # OR None if it does not
 
+
 def element_at(my_list, idx):
     i = 1
     if idx > len(my_list):
