@@ -12,17 +12,11 @@
 def divisible_by_2(my_list=[]):
     if not my_list:
         return None
-    a = my_list[:]
+    a = list(my_list)
     for i in my_list:
-        if my_list[i] < 0:
-            if my_list[i] % -2:
-                a[i] = True
-            else:
-                a[i] = False
+        if my_list[i] % 2 == 0:
+            a[i] = True
         else:
-            if my_list[i] % 2 == 0:
-                a[i] = True
-            else:
-                a[i] = False
+            a[i] = False
 
     return a
