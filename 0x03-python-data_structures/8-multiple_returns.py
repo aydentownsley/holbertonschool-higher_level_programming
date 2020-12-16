@@ -12,7 +12,7 @@
 
 def multiple_returns(sentence):
     if not sentence:
-        return None
+        return (None, None)
     if len(sentence) == 0:
         a = 0
         b = None
