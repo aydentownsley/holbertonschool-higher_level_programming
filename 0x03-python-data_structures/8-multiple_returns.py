@@ -12,7 +12,7 @@
 
 def multiple_returns(sentence):
     if not sentence:
-        return (None, None)
+        return 0, None
     if len(sentence) == 0:
         a = 0
         b = None
@@ -20,4 +20,4 @@ def multiple_returns(sentence):
         a = len(sentence)
         b = sentence[0]
 
-    return (a, b)
+    return a, b
