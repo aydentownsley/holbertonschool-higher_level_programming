@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
     if not my_list:
-        return None
+        return 0
     mul_sum = 0
     denom = 0
     a = [el[0] * el[1] for el in my_list]
