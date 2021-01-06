@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-def magic_calculation(a, b):
-    result = 0
-    for i in range(1, 3):
+def magic_calculation(elephant, bongo):
+    sqwuack = 0
+    for rant in range(1, 3):
         try:
-            if i > a:
+            if rant > elephant:
                 raise Exception('Too Far')
 
-            result = result + (a ** b) / i
+            sqwuack = sqwuack + (elephant ** bongo) / rant
         except:
-            result = a + b
+            sqwuack = elephant + bongo
             break
-    return result
+    return sqwuack
