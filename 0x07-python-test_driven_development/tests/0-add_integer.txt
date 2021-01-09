@@ -1,0 +1,41 @@
+The IntegerAddition module
+======================
+
+Using ``add_integer``
+-------------------
+
+Import ``add_integer`` from the ``Integer addition`` module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+    >>> add_integer(1, 1)
+    2
+
+    >>> add_integer(1)
+    99
+
+    >>> add_integer(-8)
+    90
+
+    >>> add_integer(12, 12.2)
+    24
+
+    >>> add_integer('a', 6)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(6, 'b')
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(-12.2, 12.9)
+    0
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
