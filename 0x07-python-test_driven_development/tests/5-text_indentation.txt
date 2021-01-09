@@ -1,0 +1,31 @@
+Text Indentation module
+======================
+
+Using ````text_indentation````
+-------------------
+
+Import ``text_indentation`` from the ``Text Indentation`` module
+::
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+	# normal test
+	>>> text = ("""Hello I am Sam. I can see:why you: would like to fly? diglet""")
+	>>> text_indentation(text)
+	Hello I am Sam.
+	<BLANKLINE>
+	I can see:
+	<BLANKLINE>
+	why you:
+	<BLANKLINE>
+	would like to fly?
+	<BLANKLINE>
+	diglet
+
+	# not a string
+	>>> text = 23423423
+	>>> text_indentation(text)
+	Traceback (most recent call last):
+	TypeError: text must be a string
