@@ -21,6 +21,24 @@ class Rectangle:
         type(self).number_of_instances -= 1
         print('Bye Rectangle...')
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ compares instaces of Rectangles
+            ---
+            rect_1: rec 1 to compare
+            rect_2: rec 2 to compare
+        """
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() is rect_2.area():
+            return rect_1
+        elif rect_1.area() > rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+
     @property
     def width(self):
         """ return width value
@@ -65,7 +83,7 @@ class Rectangle:
             retreives heigh and width and
             returns the product of the two
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return self.__height * self.__width
 
@@ -76,7 +94,7 @@ class Rectangle:
             mult both by do and return
             the sum.
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
