@@ -67,11 +67,13 @@ class Rectangle:
             mult both by do and return
             the sum.
         """
-        if self.__width is 0 or self.__height is 0:
+        if self.width is 0 or self.height is 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         w = self.__width
         h = self.__height
+        if h is 0 or w is 0:
+            return ''
         return (('#' * w + '\n') * (h - 1) + ('#' * w))
