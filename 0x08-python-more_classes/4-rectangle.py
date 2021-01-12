@@ -4,13 +4,12 @@
 
 class Rectangle:
     """ Creates Rectangle
-
         width: 0
     """
 
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -45,9 +44,9 @@ class Rectangle:
             of type int
         """
         if type(value) is not int:
-            raise TypeError("height muse be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("height myst be >=0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -56,7 +55,7 @@ class Rectangle:
             retreives heigh and width and
             returns the product of the two
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return self.__height * self.__width
 
@@ -67,7 +66,7 @@ class Rectangle:
             mult both by do and return
             the sum.
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
@@ -75,5 +74,9 @@ class Rectangle:
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
 
     def __str__(self):
+        w = self.__width
+        h = self.__height
+        if w is 0 or h is 0:
+            return ''
         return (('#' * self.__width + '\n') * (self.__height - 1) +
                 ('#' * self.__width))
