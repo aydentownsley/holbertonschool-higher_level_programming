@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-
 import sys
+
 
 class n_queens:
 
     class __init(self):
-        
+        pass
 
 if __name__ == '__main__':
 
