@@ -109,4 +109,6 @@ class Rectangle:
         w = self.__width
         h = self.__height
         s = "{}".format(self.print_symbol)
+        if h is 0 or w is 0:
+            return ''
         return ((s * w + '\n') * (h - 1) + (s * w))
