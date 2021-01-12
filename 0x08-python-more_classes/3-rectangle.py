@@ -72,5 +72,6 @@ class Rectangle:
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
-        return (('#' * self.__width + '\n') * (self.__height - 1) +
-                ('#' * self.__width))
+        w = self.__width
+        h = self.__height
+        return (('#' * w + '\n') * (h - 1) + ('#' * w))
