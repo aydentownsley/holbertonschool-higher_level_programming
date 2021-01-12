@@ -56,7 +56,7 @@ class Rectangle:
             retreives heigh and width and
             returns the product of the two
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return self.__height * self.__width
 
@@ -67,6 +67,6 @@ class Rectangle:
             mult both by do and return
             the sum.
         """
-        if self.__width is 0 or self.__width is 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
         return (self.__width * 2) + (self.__height * 2)
