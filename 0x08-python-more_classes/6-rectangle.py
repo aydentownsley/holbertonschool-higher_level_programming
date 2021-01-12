@@ -90,5 +90,4 @@ class Rectangle:
         h = self.__height
         if w is 0 or h is 0:
             return ''
-        return (('#' * self.__width + '\n') * (self.__height - 1) +
-                ('#' * self.__width))
+        return (('#' * w + '\n') * (h - 1) + ('#' * w))
