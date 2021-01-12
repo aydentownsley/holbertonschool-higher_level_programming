@@ -11,11 +11,11 @@ if __name__ == '__main__':
         print("Usage: nqueens N")
         exit(1)
 
-    if type(sys.argv) is not int:
-        print("N must be a number")
-        exit(1)
-
-    if sys.argv < 4:
+    if sys.argv[1].isdigit():
+        if int(sys.argv[1]) < 4:
+            print("N must be at least 4")
+            exit(1)
+    else:
         print("N must be a number")
         exit(1)
 
