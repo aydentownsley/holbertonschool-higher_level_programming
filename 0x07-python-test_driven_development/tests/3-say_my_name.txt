@@ -35,3 +35,9 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+    # Both strings empty
+    >>> say_my_name(first_name='', last_name='')
+    ...
+    My name is  
+
