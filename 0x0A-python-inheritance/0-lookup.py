@@ -3,7 +3,7 @@
 
 
 def lookup(obj):
-    """
-        Returns list object
+    """ lookup
+        obj: arg
     """
     return (dir(obj))
