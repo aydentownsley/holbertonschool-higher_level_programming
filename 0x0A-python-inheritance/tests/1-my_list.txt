@@ -1,0 +1,18 @@
+======================
+Tests for problem 1
+-------------------
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Now use it::
+
+# normal test
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(90)
+>>> my_list.append(18)
+>>> my_list.append(5)
+>>> print(my_list)
+[3, 90, 18, 5]
+>>> my_list.print_sorted()
+[3, 5, 18, 90]
