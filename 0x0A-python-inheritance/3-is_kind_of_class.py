@@ -2,6 +2,7 @@
 """ Type check Module
 """
 
+
 def is_kind_of_class(obj, a_class):
     """ checks type of object but not
         same object
