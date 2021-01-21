@@ -9,4 +9,5 @@ def to_json_string(my_obj):
         my_obj: obj to be
         interpretted as str
     """
-    return (json.dumps(my_obj))
+    data = json.dumps(my_obj)
+    return (data)
