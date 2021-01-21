@@ -3,6 +3,7 @@
 """
 import json
 
+
 def from_json_string(my_str):
     """
         my_str: python data struct
