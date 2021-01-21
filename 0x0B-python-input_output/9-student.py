@@ -2,6 +2,7 @@
 """ Student to JSON
 """
 
+
 class Student:
     """
         first_name: first name
