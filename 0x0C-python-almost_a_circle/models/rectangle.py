@@ -28,7 +28,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        self.id = super().__init__(id)
+        id = super().__init__(id)
 
     @property
     def width(self):
@@ -82,8 +82,47 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        for g in range(0, self.__y):
+                print()
         for i in range(0, self.__height):
+            for h in range(0, self.__x):
+                print(' ', end='')
             for j in range(0, self.__width):
                 print('#', end='')
             if i < (self.__height):
                 print()
+
+    def __str__(self):
+        return ('[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(self.id,
+                self.__x, self.__y, self.__width, self.__height))
+
+    def to_dictionary(self):
+        return {'id' : self.id, 'width' : self.width, 'height' : self.height,
+                'x' : self.x, 'y' : self.y}
+
+    def update(self, *args, **kwargs):
+        if args:
+            n_arg = len(args)
+
+        if args and n_arg != 0:
+            if n_arg > 0:
+                self.id = args[0]
+            if n_arg > 1:
+                self.width = args[1]
+            if n_arg > 2:
+                self.height = args[2]
+            if n_arg > 3:
+                self.x = args[3]
+            if n_arg > 4:
+                self.y = args[4]
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs.get('id')
+            if 'width' in kwargs:
+                self.width = kwargs.get('width')
+            if 'height' in kwargs:
+                self.height = kwargs.get('height')
+            if 'x' in kwargs:
+                self.x = kwargs.get('x')
+            if 'y' in kwargs:
+                self.y = kwargs.get('y')
