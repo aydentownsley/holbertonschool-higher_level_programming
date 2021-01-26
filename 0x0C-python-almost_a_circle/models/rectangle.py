@@ -24,6 +24,16 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+            init
+            ---
+            self: object
+            width: width of rec
+            height: height of rec
+            x: x position
+            y: y position
+            id: of object
+        """
         self.width = width
         self.height = height
         self.x = x
@@ -32,10 +42,16 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """ gets the width of rectangle instance """
+
         return self.__width
 
     @width.setter
     def width(self, val):
+        """ sets width of rectangle
+            val: value to be validated
+        """
+
         if type(val) is not int:
             raise TypeError("width must be an integer")
         elif val <= 0:
@@ -97,8 +113,8 @@ class Rectangle(Base):
                 self.__x, self.__y, self.__width, self.__height))
 
     def to_dictionary(self):
-        return {'id' : self.id, 'width' : self.width, 'height' : self.height,
-                'x' : self.x, 'y' : self.y}
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
 
     def update(self, *args, **kwargs):
         if args:

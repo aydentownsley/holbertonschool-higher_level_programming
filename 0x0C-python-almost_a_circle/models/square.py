@@ -6,8 +6,8 @@ This creates a square
 object using the rectangle
 Module to inherit attrs.
 """
-
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
@@ -54,7 +54,7 @@ class Square(Rectangle):
                 self.y = kwargs.get('y')
 
     def to_dictionary(self):
-        return {'id' : self.id, 'size' : self.size, 'x' : self.x , 'y' : self.y}
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     def __str__(self):
         return ('[Square] ({:d}) {:d}/{:d} - {:d}'.format(self.id, self.x,
