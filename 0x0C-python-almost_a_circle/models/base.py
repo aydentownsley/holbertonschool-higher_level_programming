@@ -18,8 +18,10 @@ class Base:
 
     def __init__(self, id=None):
         """
-            self: object
+            initiates the class
+            attributes
             ---
+            self: object
             id: of object
         """
         if id is not None:
@@ -30,6 +32,13 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+            takes a list of dictionaries
+            and translates it to a string
+            that is in json
+            ---
+            list_dictionaries: list of dicts
+        """
         if list_dictionaries and len(list_dictionaries) is not 0:
             return json.dumps(list_dictionaries)
         else:
@@ -37,6 +46,12 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+            saves json string to a file
+            ---
+            cls: class type of object
+            list_objs: list of objects
+        """
         list_of_dicts = []
         file_name = "{}.json".format(cls.__name__)
         with open(file_name, 'w') as f:
@@ -46,6 +61,12 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+            turns string into dict
+            ---
+            json_string: compatible string
+            to to turn into python dict
+        """
         if json_string:
             return json.loads(json_string)
         else:
@@ -53,6 +74,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+            creates an object given a class type
+            and a compatible dictionary
+            ---
+            cls: class type of object
+            **dictionary: python dict
+        """
         if cls.__name__ is 'Rectangle':
             dummy = cls(1, 2)
         elif cls.__name__ is 'Square':
@@ -62,6 +90,12 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """
+            loads a json string from
+            a json file
+            ---
+            cls: type of class object
+        """
         list_of = []
         f_name = '{}.json'.format(cls.__name__)
         with open(f_name, 'r') as f:

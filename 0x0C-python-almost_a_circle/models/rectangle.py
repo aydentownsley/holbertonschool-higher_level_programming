@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-First Rectangle Module
+Module of Rectangle, from Base
 -------
 This module inherits from Base
 and then adds private attributes
@@ -10,7 +10,10 @@ and then adds private attributes
 - Y
 Each with its own getter
 and setter
+
 """
+
+
 from models.base import Base
 
 
@@ -48,7 +51,10 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, val):
-        """ sets width of rectangle
+        """
+            sets width of rectangle
+            ---
+            self: object
             val: value to be validated
         """
 
@@ -60,10 +66,19 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """ gets height of rectangle instance """
+
         return self.__height
 
     @height.setter
     def height(self, val):
+        """
+            sets height of rectangle instance
+            ---
+            self: object
+            val: value to be validated
+        """
+
         if type(val) is not int:
             raise TypeError("height must be an integer")
         elif val <= 0:
@@ -72,10 +87,18 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """ gets x value """
         return self.__x
 
     @x.setter
     def x(self, val):
+        """
+            sets x value
+            ---
+            self: object
+            val: value to be validated
+        """
+
         if type(val) is not int:
             raise TypeError("x must be an integer")
         elif val < 0:
@@ -84,10 +107,19 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """ gets y value """
+
         return self.__y
 
     @y.setter
     def y(self, val):
+        """
+            sets y value
+            ---
+            self: object
+            val: value to be validated
+        """
+
         if type(val) is not int:
             raise TypeError("y must be an integer")
         elif val < 0:
@@ -95,9 +127,13 @@ class Rectangle(Base):
         self.__y = val
 
     def area(self):
+        """ calculate area of rectangle instace """
+
         return self.__width * self.__height
 
     def display(self):
+        """ prints the rectangle using '#' """
+
         for g in range(0, self.__y):
                 print()
         for i in range(0, self.__height):
@@ -109,14 +145,20 @@ class Rectangle(Base):
                 print()
 
     def __str__(self):
+        """ creates string representation of object """
+
         return ('[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'.format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
 
     def to_dictionary(self):
+        """ makes a dictionary of the objects attributes """
+
         return {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}
 
     def update(self, *args, **kwargs):
+        """ updates the attribute values of instance """
+
         if args:
             n_arg = len(args)
 
