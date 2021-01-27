@@ -56,7 +56,7 @@ class Base:
         file_name = "{}.json".format(cls.__name__)
         with open(file_name, 'w') as f:
             if list_objs is None:
-                f.write("[]")
+                list_objs = []
             else:
                 for i in list_objs:
                     list_of_dicts.append(i.to_dictionary())
@@ -87,7 +87,7 @@ class Base:
         if cls.__name__ is 'Rectangle':
             dummy = cls(1, 2)
         elif cls.__name__ is 'Square':
-            dummy = cls(1, 1)
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
