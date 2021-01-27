@@ -6,19 +6,19 @@ This module is creating
 a Base Object, to be used
 to inherit from.
 """
+
+
 import json
 
 
 class Base:
-    """
-        Base: Ancesteral Object
+    """ Class Base: Ancesteral Object
         nb: number of objects
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-            initiates the class
+        """ initiates the class
             attributes
             ---
             self: object

@@ -6,6 +6,8 @@ This creates a square
 object using the rectangle
 Module to inherit attrs.
 """
+
+
 from models.rectangle import Rectangle
 
 

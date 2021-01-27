@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """ Test Module for Rectangle Class """
 
+
 import unittest
 import json
-import models.rectangle from Rectangle
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
@@ -12,8 +13,8 @@ class TestRectangle(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """ sets up instances for tests """
-        cls.r1 = Rectangle(5, 1)
-        cls.r2 = Rectangle(3, 5)
+        cls.r1 = Rectangle(5, 1, id=50)
+        cls.r2 = Rectangle(3, 5, id=45)
         cls.r3 = Rectangle(2, 8)
         cls.r4 = Rectangle(4, 2, 8)
         cls.r5 = Rectangle(2, 4, 2, 8)
@@ -31,19 +32,39 @@ class TestRectangle(unittest.TestCase):
 
     def test_attrs(self):
         """ tests id, w, h, x, y, set, get """
-        #id tests
-        self.assertEqual(self.r1.id, 1)
-        self.assertEqual(self.r2.id, 2)
+        # id tests
+        self.assertEqual(self.r1.id, 50)
+        self.assertEqual(self.r2.id, 45)
         self.assertEqual(self.r6.id, 8)
-        #width tests
+        # width tests
         self.assertEqual(self.r1.width, 5)
         self.assertEqual(self.r6.width, 1)
-        #height test
+        # height test
         self.assertEqual(self.r2.height, 5)
         self.assertEqual(self.r4.height, 2)
-        #x pos test
+        # x pos test
         self.assertEqual(self.r3.x, 0)
         self.assertEqual(self.r4.x, 8)
         self.assertEqual(self.r6.x, 4)
-        #y pos test
-        self.assertEqual(
+        # y pos test
+        self.assertEqual(self.r1.y, 0)
+        self.assertEqual(self.r5.y, 8)
+
+    def test_excpets(self):
+        """ tests the exceptions in validating """
+        with self.assertRaises(TypeError):
+                                Rectangle("Width", 5)
+        with self.assertRaises(TypeError):
+                                Rectangle(5, "Height")
+        with self.assertRaises(TypeError):
+                                Rectangle(5, 5, "x")
+        with self.assertRaises(TypeError):
+                                Rectangle(5, 5, 5, "y")
+        with self.assertRaises(ValueError):
+                                Rectangle(-5, 5)
+        with self.assertRaises(ValueError):
+                                Rectangle(5, -5)
+        with self.assertRaises(ValueError):
+                                Rectangle(5, 5, -5)
+        with self.assertRaises(ValueError):
+                                Rectangle(5, 5, 5, -5)

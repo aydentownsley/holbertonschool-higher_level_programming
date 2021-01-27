@@ -10,7 +10,6 @@ and then adds private attributes
 - Y
 Each with its own getter
 and setter
-
 """
 
 
