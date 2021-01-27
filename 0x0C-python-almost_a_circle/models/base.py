@@ -101,9 +101,11 @@ class Base:
         """
         list_of = []
         f_name = '{}.json'.format(cls.__name__)
-        with open(f_name, 'r') as f:
-            cr_dict = cls.from_json_string(f.read())
-            for i in cr_dict:
-                list_of.append(cls.create(**i))
-            return list_of
-        return "[]"
+        try:
+            with open(f_name, 'r') as f:
+                cr_dict = cls.from_json_string(f.read())
+                for i in cr_dict:
+                    list_of.append(cls.create(**i))
+        except:
+            pass
+        return list_of
