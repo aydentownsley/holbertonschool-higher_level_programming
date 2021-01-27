@@ -106,4 +106,4 @@ class Base:
             for i in cr_dict:
                 list_of.append(cls.create(**i))
             return list_of
-        return []
+        return "[]"
