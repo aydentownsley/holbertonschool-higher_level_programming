@@ -1,3 +1,3 @@
 -- SQL SCRIPT
 -- FULL DESCRIP OF TABLE
-SHOW fields FROM first_table;
+SHOW CREATE TABLE first_table;
