@@ -1,0 +1,3 @@
+-- SQL SCRIPT
+-- LISTS ROWS OF TABLE
+SELECT * FROM first_table;
