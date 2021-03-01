@@ -1,3 +1,3 @@
--- SQL SCRIPT
+-- SQL SCRIPT for problem 8
 -- RETURN COUNT OF ID
-select count(id) from first_table where id = 89;
+SELECT COUNT("id") FROM first_table WHERE id = 89;
