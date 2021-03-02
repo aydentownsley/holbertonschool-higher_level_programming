@@ -1,0 +1,3 @@
+-- SQL SCRIPT
+-- LISTS THE NUMBER OF RECORDS WITH THE SAME SCORE
+SELECT score, COUNT(score) AS number FROM second_table GROUP BY score DESC;
