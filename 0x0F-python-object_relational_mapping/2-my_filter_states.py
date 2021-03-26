@@ -14,7 +14,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE"
-                " name = %s ORDER BY id ASC", [stname])
+                " name='{}' ORDER BY id ASC"
+                .format(stname))
     print(cur.fetchone())
     cur.close()
     db.close()
