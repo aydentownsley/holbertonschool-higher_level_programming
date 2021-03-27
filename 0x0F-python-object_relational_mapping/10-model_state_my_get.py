@@ -12,7 +12,7 @@ if __name__ == "__main__":
     specstate = sys.argv[4]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-                            uname, pword, dbname))
+                           uname, pword, dbname))
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     sesh = Session()
@@ -21,5 +21,5 @@ if __name__ == "__main__":
     if print_state:
         print("{}".format(print_state.id))
     else:
-        print("Not Found")
+        print("Not found")
     sesh.close()
