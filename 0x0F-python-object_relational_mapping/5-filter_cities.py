@@ -15,13 +15,13 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT cities.name FROM cities INNER JOIN"
                 " states ON cities.state_id = states.id"
-                " WHERE states.name = %s ORDER BY cities.id ASC", [stname])
-    query_rows = cur.fetchall()
+                " WHERE states.name = %s ORDER BY cities.id ASC", (stname, ))
     end = 0
-    for row in query_rows:
+    for row in cur.fetchall():
         if end == 1:
             print(", ", end="")
         end = 1
         print(row[0], end="")
+    print()
     cur.close()
     db.close()
