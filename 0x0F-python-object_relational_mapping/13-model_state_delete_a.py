@@ -19,6 +19,6 @@ if __name__ == "__main__":
     for states in sesh.query(State).order_by(State.id):
         if 'a' in states.name:
             sesh.delete(states)
-            sesh.commit()
 
+    sesh.commit()
     sesh.close()
