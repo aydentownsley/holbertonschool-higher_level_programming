@@ -17,10 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sesh = Session()
 
-    states_a = sesh.query(State).filter(State.name.like('%a%'))
-
-    for states in states_a:
-        sesh.delete(states)
-        sesh.commit()
+    for states in sesh.query(State).order_by(State.id):
+        if 'a' in states.name:
+            sesh.delete(states)
+            sesh.commit()
 
     sesh.close()
