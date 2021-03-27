@@ -17,8 +17,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     sesh = Session()
 
-    states_a = sesh.query(State).filter(State.name.like('%a%')).order_by(
-               State.id)
+    states_a = sesh.query(State).filter(State.name.like('%a%'))
 
     for states in states_a:
         sesh.delete(states)
