@@ -18,7 +18,7 @@ if __name__ == "__main__":
     sesh = Session()
 
     states_a = sesh.query(State).filter(State.name.like('%a%')).order_by(
-               State.id.asc())
+               State.id)
 
     for states in states_a:
         sesh.delete(states)
