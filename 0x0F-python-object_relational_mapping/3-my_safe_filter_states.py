@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE"
-                " name = %s ORDER BY id ASC", [stname])
+                " BINARY name = %s ORDER BY id ASC", [stname])
     print(cur.fetchone())
     cur.close()
     db.close()
