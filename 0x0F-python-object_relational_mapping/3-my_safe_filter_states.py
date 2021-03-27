@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """Lists all states starting with 'N'"""
-
+import MySQLdb
+import sys
 
 if __name__ == "__main__":
-    import MySQLdb
-    import sys
 
     uname = sys.argv[1]
     pword = sys.argv[2]
