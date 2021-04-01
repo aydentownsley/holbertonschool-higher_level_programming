@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" 100 main class """
+
 import sqlalchemy
 import sys
 from relationship_city import Base, City
@@ -8,6 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+
     uname = sys.argv[1]
     pword = sys.argv[2]
     dbname = sys.argv[3]
