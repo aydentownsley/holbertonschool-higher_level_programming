@@ -4,6 +4,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from relationship_state import Base
 
+
 class City(Base):
     """ City inheriting from States Base
     """
