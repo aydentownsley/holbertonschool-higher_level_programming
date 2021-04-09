@@ -6,6 +6,10 @@ if __name__ == "__main__":
     from requests.auth import HTTPBasicAuth
     import sys
 
-    r = requests.get('https://api.github.com/users/{}'.format(sys.argv[1]),
-                 auth=HTTPBasicAuth(sys.argv[1], sys.argv[2]))
-    print(r.json().get('id'))
+    r = requests.get('https://api.github.com/users/',
+                     auth=HTTPBasicAuth(sys.argv[1], sys.argv[2]))
+    try:
+        out = r.json()
+        print(out['id'])
+    except:
+        print("None")
