@@ -9,5 +9,5 @@ if __name__ == "__main__":
         site = r.read()
         print("Body response:")
         print("\t- type: {}".format(type(site)))
-        print("\t- contenct: {}".format(site))
+        print("\t- content: {}".format(site))
         print("\t- utf8 content: {}".format(site.decode('utf-8')))
