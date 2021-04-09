@@ -1,3 +1,3 @@
 #!/bin/bash
 # sets header variables
-curl -s -X GET "X-HolbertonSchool-User-Id:98" "$1"
+curl -sLH "X-HolbertonSchool-User-Id:98" "$1"
