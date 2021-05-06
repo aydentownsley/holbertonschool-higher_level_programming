@@ -18,7 +18,9 @@ request(url, function (err, res) {
         newDict[key] = k++;
       }
     }
-
+    for (const s in newDict) {
+      if (newDict[s] === 0) { delete newDict[s]; }
+    }
     console.log(newDict);
   }
 });
