@@ -2,13 +2,13 @@
 const request = require('request');
 const url = process.argv[2].toString();
 let k = 0;
-const newDict = {};
 let key = -1;
+const newDict = {};
 let data;
 
 request(url, function (err, res, body) {
   if (err) {
-    return console.log(err);
+    console.log(err);
   } else {
     data = JSON.parse(body);
     for (const i in data) {
