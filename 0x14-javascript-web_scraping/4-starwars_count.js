@@ -14,6 +14,6 @@ request.get(url.toString(), function (err, body) {
         k++;
       }
     }
-    return console.log(k);
+    console.log(k);
   }
 });
